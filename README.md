@@ -47,7 +47,10 @@ recorded price. UTC timestamps use ISO 8601; the browser displays local time.
 
 ## Screenshots
 
-> Add screenshots here.
+<img width="1901" height="902" alt="Main-page" src="https://github.com/user-attachments/assets/eb3666ef-baf4-42f6-9b53-f498a52cfca5" />
+<img width="1107" height="732" alt="Grafik-price" src="https://github.com/user-attachments/assets/1d7ad1c5-3c29-41dd-a4ba-dcb9bd23f4c6" />
+
+
 
 ## API
 
