@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero"><p class="eyebrow">YOUR PERSONAL PRICE WATCH</p><h1>Keep an eye on<br>your next good deal<span>.</span></h1>
+<p>Track product prices and get notified when prices drop.</p></section>
+<section aria-labelledby="watch-title"><div class="section-heading"><div><p class="eyebrow">THE WATCHLIST</p><h2 id="watch-title">Tracked products <span id="count" class="count">0</span></h2></div><span class="muted">Updates automatically</span></div>
+<div id="tracked" class="grid"><p class="empty">Loading your watchlist…</p></div></section>
+<section class="catalog" aria-labelledby="catalog-title"><div class="section-heading"><div><p class="eyebrow">FIND SOMETHING WORTH WATCHING</p><h2 id="catalog-title">Explore the catalog</h2></div></div>
+<form id="search-form" class="search"><label class="sr-only" for="query">Search products</label><input id="query" name="q" placeholder="Search for a phone, watch, or something else…" maxlength="200"><button type="submit">Search ↗</button></form>
+<p id="results-label" class="muted" aria-live="polite"></p><div id="results" class="grid"></div>
+<div class="pagination"><button id="previous" class="secondary" hidden>← Previous</button><button id="next" class="secondary" hidden>Next →</button></div></section>
+{% endblock %}

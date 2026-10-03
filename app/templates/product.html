@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ product.title }} · Price Tracker{% endblock %}
+{% block head %}<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+<a href="/" class="back">← Back to watchlist</a>
+<section id="product-detail" data-id="{{ product.id }}" class="detail">
+<div class="detail-image"><img src="{{ product.thumbnail }}" alt="{{ product.title }}"></div>
+<div><p class="eyebrow">{{ product.source }} / PRICE WATCH</p><h1 class="product-title">{{ product.title }}</h1>
+<p id="alert-state" class="badge"></p><div id="detail-stats" class="stats"></div>
+<p id="last-check" class="muted"></p><button id="refresh-product">↻ Refresh price</button></div></section>
+<section class="panel"><div class="section-heading"><div><p class="eyebrow">EVERY CHECK TELLS A STORY</p><h2>Price history</h2></div><span class="muted">USD · your local time</span></div>
+<div class="chart"><canvas id="history-chart" role="img" aria-label="Product price history and target price"></canvas></div>
+<p id="chart-status" class="muted"></p><details><summary>View price history as a table</summary><div class="table-wrap"><table><thead><tr><th>Checked at</th><th>Price (USD)</th></tr></thead><tbody id="history-table"></tbody></table></div></details></section>
+<section class="panel target"><div><h2>Set your target</h2><p class="muted">An alert is logged when the price reaches or falls below your target.</p></div>
+<form id="target-form"><label for="target">Target price (USD)</label><div class="inline"><input id="target" type="number" min="0" max="999999999" step="0.01" required value="{{ product.target_price }}"><button>Save target</button></div></form></section>
+<div class="delete-row"><button id="delete-product" class="danger secondary">Delete from watchlist</button></div>
+{% endblock %}

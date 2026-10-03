@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_NAME: ${APP_NAME:-Price Tracker}
+      DATABASE_URL: sqlite:////app/data/price_tracker.db
+      PRICE_CHECK_INTERVAL_SECONDS: ${PRICE_CHECK_INTERVAL_SECONDS:-60}
+      SIMULATE_PRICE_CHANGES: ${SIMULATE_PRICE_CHANGES:-true}
+      SCHEDULER_ENABLED: ${SCHEDULER_ENABLED:-true}
+    volumes:
+      - tracker-data:/app/data
+    restart: unless-stopped
+volumes:
+  tracker-data:

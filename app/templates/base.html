@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Price Tracker{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+{% block head %}{% endblock %}
+<script defer src="{{ url_for('static', path='app.js') }}"></script></head>
+<body><header class="topbar"><a class="brand" href="/"><span class="logo">↘</span> PRICE TRACKER</a>
+<nav><a href="/">Dashboard</a><a href="/docs">API docs ↗</a></nav></header>
+<main>{% if simulation %}<div class="mode"><span class="dot"></span> DEMO MODE <span>Refreshes simulate ±5% price changes. All prices in USD.</span></div>{% endif %}
+<div id="message" role="status" aria-live="polite" hidden></div>
+{% block content %}{% endblock %}</main>
+<footer>Price Tracker <span>Small changes. Better timing.</span><a href="/docs">Built with FastAPI ↗</a></footer>
+</body></html>
